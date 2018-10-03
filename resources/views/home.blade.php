@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="home container">
     <div class="row justify-content-center" style="margin-bottom: 3rem">
         <div class="col-md-10 col-lg-8">
             <div class="card">
@@ -20,13 +20,13 @@
         </div>
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center home-cards">
         <div class="col-5">
             <div class="card">
                 <div class="card-header">Meetings</div>
 
-                <a href="{{ route('view-tasks') }}">
-                    <div class="card-body main-card">
+                <a href="{{ route('view-meetings') }}">
+                    <div class="card-body">
                         <img src="{{ asset('imgs/meeting.png') }}" alt="">
                     </div>
                 </a>
@@ -37,7 +37,7 @@
                 <div class="card-header">Tasks Submission</div>
 
                 <a href="{{ route('view-tasks') }}">
-                    <div class="card-body main-card">
+                    <div class="card-body">
                         <img src="{{ asset('imgs/task.png') }}" alt="">
                     </div>
                 </a>

@@ -18,6 +18,7 @@ class CreateMeetingsTable extends Migration
             $table->string('users')->default('');
             $table->string('location');
             $table->string('time');
+            $table->boolean('done')->default(0);
             $table->string('info');
             $table->timestamps();
         });

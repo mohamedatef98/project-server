@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="welcome">
+    <div class="welcome text-center">
         <h1>CSE 2018 SW Engineering Project</h1>
         @auth
             <a href="{{ route('home') }}">

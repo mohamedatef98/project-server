@@ -28,4 +28,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-//Route::get('/tasks','TasksC')
+Route::get('/tasks','TasksController@index')->name('view-tasks');
+
+Route::get('/meetings','MeetingsController@index')->name('view-meetings');
+
+Route::get('/meetings/{meeting}', 'MeetingsController@view')->name('view-meeting');
+
+Route::get('/meetings/{meeting}/confirm', 'MeetingsController@confirm')->name('confirm-meeting');
