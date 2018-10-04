@@ -2,7 +2,8 @@
 
 @section('mask')
 
-        <div class="tasks">
+        <div class="tasks text-center">
+            <h1>Our Tasks</h1>
             <div class="row">
                 @foreach($tasks as $task)
                     <div class="col-sm-2 col-md-4">
