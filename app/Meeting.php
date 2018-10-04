@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Meeting extends Model
 {
-
+    protected $guarded = [];
 
     public function hasConfirmed(User $user){
         $confirmedUsers = explode(',',$this->users);
