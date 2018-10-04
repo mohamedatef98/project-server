@@ -33,4 +33,8 @@ Route::group(['prefix' => '/', 'middleware' => 'auth'],function(){
 
     Route::get('/tasks/{task}', 'TasksController@view')->name('view-task');
 
+    Route::get('/tasks/{task}/submit','SubmissionsController@index')->name('view-submit');
+
+    Route::post('/tasks/{task}/submit','SubmissionsController@store')->name('post-submit');
+
 });

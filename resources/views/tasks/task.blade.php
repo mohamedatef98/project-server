@@ -14,7 +14,7 @@
 
         <div class="description">{!! $task->description !!}</div>
         @if( (!$task->done && !$task->hasSubmitted(auth()->user())) )
-            <a class="submit" href="{{-- route('submit-task',$task->id) --}}">
+            <a class="submit" href="{{ route('view-submit',$task->id) }}">
                 <button class="btn btn-primary ">Submit!</button>
             </a>
         @endif
