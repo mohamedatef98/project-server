@@ -15,7 +15,7 @@ class MeetingsController extends Controller
 
     public function view(Request $request, Meeting $meeting){
 
-        $confirmed = Meeting::confirmed($request->user()->id, $meeting);
+        $confirmed = $meeting->hasConfirmed($request->user());
 
         //return $confirmed? 't': 'f';
 
@@ -24,7 +24,7 @@ class MeetingsController extends Controller
 
     public function confirm(Request $request, Meeting $meeting){
 
-        $confirmed = Meeting::confirmed($request->user()->id, $meeting);
+        $confirmed = $meeting->hasConfirmed($request->user());
 
         if(! $confirmed || !$meeting->done){
             $user = $request->user();

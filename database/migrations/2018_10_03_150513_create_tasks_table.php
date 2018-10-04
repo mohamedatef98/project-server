@@ -15,8 +15,9 @@ class CreateSubmissionsTable extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
             $table->boolean('done')->default(0);
+            $table->string('description');
+            $table->string('due_to');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateSubmissionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('submissions');
+        Schema::dropIfExists('tasks');
     }
 }

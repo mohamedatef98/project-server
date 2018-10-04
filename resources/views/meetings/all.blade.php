@@ -1,9 +1,9 @@
 @extends('mask')
 
 @section('mask')
-    <div>
+    <div class="text-center">
         <h1>Our Meetings</h1>
-        <div class="meetings text-center">
+        <div class="meetings">
             @foreach($meetings as $meeting)
                 @if($meeting->done)
                     <a href="{{ route('view-meeting', $meeting->id) }}" class="done">

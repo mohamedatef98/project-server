@@ -8,9 +8,13 @@ use Illuminate\Http\Request;
 class TasksController extends Controller
 {
     public function index(Request $request){
-        $available = \App\Task::where('done', 0)->get();
+        $tasks = \App\Task::latest()->get();
 
-        return $available;
+        return view('tasks.all')->with('tasks',$tasks);
+    }
+
+    public function view(Request $request, Task $task){
+        return view('tasks.task')->with('task',$task);
     }
 
 }
