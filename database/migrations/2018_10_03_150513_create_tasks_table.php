@@ -16,6 +16,7 @@ class CreateSubmissionsTable extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
             $table->boolean('done')->default(0);
+            $table->string('title');
             $table->string('description');
             $table->string('due_to');
             $table->timestamps();
