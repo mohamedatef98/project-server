@@ -14,7 +14,8 @@ class TasksController extends Controller
     }
 
     public function view(Request $request, Task $task){
-        return view('tasks.task')->with('task',$task);
+        $subs = $task->submissions->where('user_id', $request->user()->id);
+        return view('tasks.task')->with('task',$task)->with('subs', $subs);
     }
 
 }

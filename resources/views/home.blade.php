@@ -21,7 +21,7 @@
     </div>
 
     <div class="row justify-content-center home-cards">
-        <div class="col-5">
+        <div class="col-sm-5 col-lg-4">
             <div class="card">
                 <div class="card-header">Meetings</div>
 
@@ -32,7 +32,7 @@
                 </a>
             </div>
         </div>
-        <div class="col-5">
+        <div class="col-sm-5 col-lg-4">
             <div class="card">
                 <div class="card-header">Tasks Submission</div>
 

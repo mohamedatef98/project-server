@@ -16,7 +16,7 @@ class SubmissionsController extends Controller
         $request->validate([
             'github' => array('string','regex:/github.com/', 'required_without_all:files' , 'nullable'),
             'files' => array('file', 'mimes:png,gif,jpg,jpeg,zip,rar,bmp', 'max:10240',
-                             'image', "required_without_all:github")
+                              "required_without_all:github")
         ]);
 
         $user = auth()->user();
@@ -25,13 +25,18 @@ class SubmissionsController extends Controller
         $submission->user_id = auth()->user()->id;
         $submission->task_id = $task->id;
 
-        $submission->github = $request->input('github');
+        $submission->github = $request->input('github') ? $request->input('github') : '';
 
         $path = "";
 
         if($request->hasFile('files')){
+            $previous_submissions = 0;
+
+            if($task->submissions->count() > 0)
+                $previous_submissions = $task->submissions->count();
+
             $ext = $request->file('files')->extension();
-            $path = "{$task->id}_{$user->id}.{$ext}";
+            $path = "{$task->id}_{$user->id}_{$previous_submissions}.{$ext}";
             $request->file('files')->storeAs("public/submits",$path);
 
         }
@@ -40,7 +45,7 @@ class SubmissionsController extends Controller
 
         $submission->save();
 
-        return $submission;
-        return redirect()->back();
+        //return $submission;
+        return redirect()->route('view-task',$task->id);
     }
 }

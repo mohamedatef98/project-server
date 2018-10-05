@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 html, body{
-    width: 100vw;
+    width: 100%;
     height: 100%;
 }
 
@@ -34,6 +34,13 @@ main {
     transform: rotateZ(-45deg) scale(2,2);
 }
 
+.label{
+    display: inline-block;
+    padding: 5px;
+    background-color: white;
+    border-radius: 3px;
+}
+
 .mask > div{
     background-color: rgba(255, 255, 255, 0.75);
     min-height: 50vh;
@@ -42,6 +49,7 @@ main {
     /*flex-direction: column;*/
     /*justify-content: space-evenly;*/
     align-items: center;
+    padding: 1rem 0;
 }
 
 .text-center{
@@ -131,4 +139,29 @@ main {
 
 .submit{
     margin-top: 4rem;
+}
+
+.task .submissions{
+    grid-column: span 2;
+    width: 80%;
+}
+
+.task .submissions > div{
+    background-color: rgba(255, 255, 255, 0.42);
+}
+
+.task .submissions a{
+    color: black;
+}
+
+.pending{
+    background-color: rgba(167, 121, 233, 0.56) !important;
+}
+
+.valid{
+    background: rgba(13, 128, 83, 0.38) !important;
+}
+
+.invalid{
+    background: rgba(251, 14, 0, 0.38) !important;
 }
