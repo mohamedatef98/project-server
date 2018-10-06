@@ -21,6 +21,7 @@ class CreateTasksTable extends Migration
             $table->string('github');
             $table->boolean('checked')->default(0);
             $table->boolean('valid')->default(1);
+            $table->string('details');
             $table->timestamps();
         });
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Submission;
 use App\Task;
 use Illuminate\Http\Request;
 
@@ -47,5 +48,12 @@ class SubmissionsController extends Controller
 
         //return $submission;
         return redirect()->route('view-task',$task->id);
+    }
+
+    public function details(Request $request, Submission $submission){
+        if($submission->user->id === auth()->user()->id)
+            return view('submissions.details')->with('sub',$submission);
+        else
+            return redirect()->back();
     }
 }

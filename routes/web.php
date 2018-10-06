@@ -37,4 +37,25 @@ Route::group(['prefix' => '/', 'middleware' => 'auth'],function(){
 
     Route::post('/tasks/{task}/submit','SubmissionsController@store')->name('post-submit');
 
+    Route::get('/tasks/submissions/{submission}','SubmissionsController@details')->name('detail-submit');
+
+});
+
+Route::group(['prefix' => '/admin', 'middleware'=>'admin'],function (){
+    Route::get('/',function (\Illuminate\Support\Facades\Request $request){
+        return "Hello";
+        //return view('admin-panel');
+    })->name('admin-panel');
+
+    Route::get('/meeting','MeetingsController@create')->name('form-meeting');
+    Route::post('/meeting','MeetingsController@store')->name('post-meeting');
+    Route::get('/meeting/{meeting}','MeetingsController@list')->name('list-meeting');
+
+    Route::get('/task','TasksController@create')->name('form-task');
+    Route::get('/task','TasksController@store')->name('post-task');
+    Route::get('/task/{task}','TasksController@list')->name('list-task');
+
+
+
+
 });
