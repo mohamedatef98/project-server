@@ -35,7 +35,7 @@ Route::group(['prefix' => '/', 'middleware' => 'auth'],function(){
 
     Route::get('/tasks/{task}/submit','SubmissionsController@index')->name('view-submit');
 
-    Route::post('/tasks/{task}/submit','SubmissionsController@store')->name('post-submit');
+    Route::post('/tasks/{task}/save','SubmissionsController@store')->name('post-submit');
 
     Route::get('/tasks/submissions/{submission}','SubmissionsController@details')->name('detail-submit');
 
