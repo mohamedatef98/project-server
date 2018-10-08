@@ -15,7 +15,7 @@ class SubmissionsController extends Controller
     }
 
     public function store(Request $request, Task $task){
-        return $request;
+
         $request->validate([
             'files' => array('string', 'required' ),
         ]);
@@ -26,6 +26,8 @@ class SubmissionsController extends Controller
             'task_id' => $task->id,
             'files' => $request->input('files')
         ]);
+
+        return redirect()->back();
 
         return redirect()->route('view-task',$task->id);
     }

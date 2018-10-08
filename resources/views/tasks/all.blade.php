@@ -12,7 +12,7 @@
                                 @if($task->done)
                                     <h3 class="done__label">DONE</h3>
                                 @endif
-                                <img class="card-img-top" src="{{ asset('/imgs/tasks/'.$task->id.'.png') }}" alt="Card image cap">
+                                <img class="card-img-top" src="{{ $task->img }}" alt="Card image cap">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{ $task->title }}</h5>
