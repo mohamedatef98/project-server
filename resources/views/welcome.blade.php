@@ -12,3 +12,7 @@
         @endauth
     </div>
 @endsection
+
+@section('title')
+    Welcome
+@endsection

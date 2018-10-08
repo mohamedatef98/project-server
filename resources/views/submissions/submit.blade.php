@@ -30,3 +30,7 @@
         </form>
     </div>
 @endsection
+
+@section('title')
+    Submit
+@endsection

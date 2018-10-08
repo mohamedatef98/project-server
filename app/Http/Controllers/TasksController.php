@@ -14,7 +14,7 @@ class TasksController extends Controller
     }
 
     public function view(Request $request, Task $task){
-        $subs = $task->submissions->where('user_id', $request->user()->id);
+        $subs = \App\Submission::where('task_id', $task->id)->where('user_id',auth()->user()->id)->latest()->get();
         return view('tasks.task')->with('task',$task)->with('subs', $subs);
     }
 

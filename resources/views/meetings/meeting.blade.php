@@ -27,3 +27,7 @@
             @endif
         </div>
 @endsection
+
+@section('title')
+    Meeting Details
+@endsection

@@ -18,3 +18,7 @@
         </div>
     </div>
 @endsection
+
+@section('title')
+    Meetings
+@endsection

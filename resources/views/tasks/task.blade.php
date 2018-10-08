@@ -38,3 +38,7 @@
         @endif
     </div>
 @endsection
+
+@section('title')
+    Task Details
+@endsection
