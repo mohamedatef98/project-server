@@ -9,7 +9,7 @@
             </a>
         </div>
         <div class="task-img">
-            <img src="{{ asset('imgs/tasks/'.$sub->task->id.'.png') }}" alt="">
+            <img src="{{ $sub->task->img }}" alt="">
         </div>
         <div class="submission-status">
             @if($sub->checked == 0)
@@ -36,13 +36,10 @@
                     <h3>{{ (new \Illuminate\Support\Carbon($sub->created_at))->diffForHumans(Illuminate\Support\Carbon::now()) }}</h3>
                     <div class="d-flex w-100 justify-content-between">
 
-                        @if($sub->github !== '')
-                            <a href="http://{{ $sub->github }}">Git Hub Repo</a>
-                        @endif
 
-                        @if($sub->files !== '')
-                            <a href="{{ asset('storage/submits/'.$sub->files) }}" download="{{ $sub->files }}">Files</a>
-                        @endif
+                        <a target="_blank" href="http://{{ $sub->files }}">Files</a>
+
+
 
                         <a href="{{ route('detail-submit',$sub->id) }}">Details</a>
                     </div>

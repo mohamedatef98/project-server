@@ -71,6 +71,7 @@ class RegisterController extends Controller
             'github' => $data['github'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'skills' => $data['skills']
         ]);
     }
 }

@@ -126,7 +126,7 @@ main {
 
 .task img{
     grid-area: img;
-    width: 50%;
+    height: 20rem;
 }
 
 .task .description{
@@ -188,7 +188,8 @@ main {
 }
 
 .submission .task-img img{
-    width: 100%;
+    height: 20rem;
+
 }
 
 .submission .submission-status{

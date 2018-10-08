@@ -18,10 +18,9 @@ class CreateTasksTable extends Migration
             $table->integer('user_id');
             $table->integer('task_id');
             $table->string('files');
-            $table->string('github');
             $table->boolean('checked')->default(0);
             $table->boolean('valid')->default(1);
-            $table->string('details');
+            $table->string('details')->default('');
             $table->timestamps();
         });
     }

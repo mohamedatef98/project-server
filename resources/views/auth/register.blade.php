@@ -68,6 +68,22 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="skills" class="col-md-4 col-form-label text-md-right">{{ __('Enter your Skills') }}</label>
+
+                            <div class="col-md-6">
+                                <textarea id="skills" rows="5"
+                                          class="form-control{{ $errors->has('skills') ? ' is-invalid' : '' }}"
+                                          name="skills" value="{{ old('skills') }}" required>
+                                </textarea>
+                                @if ($errors->has('skills'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('skills') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">

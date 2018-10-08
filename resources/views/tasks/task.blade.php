@@ -10,7 +10,7 @@
             <h3>{{ $task->title }}</h3>
             <h3>Due To: {{ $task->due_to }}</h3>
         </div>
-        <img src="{{ asset('imgs/tasks/'.$task->id.'.png') }}" alt="">
+        <img src="{{ $task->img }}" alt="task">
 
         <div class="description">{!! $task->description !!}</div>
         @if( (!$task->done) )
@@ -26,15 +26,11 @@
                         <h3>{{ (new \Illuminate\Support\Carbon($sub->created_at))->diffForHumans(Illuminate\Support\Carbon::now()) }}</h3>
                         <div class="d-flex w-100 justify-content-between">
 
-                            @if($sub->github !== '')
-                                <a href="http://{{ $sub->github }}">Git Hub Repo</a>
-                            @endif
 
-                            @if($sub->files !== '')
-                                <a href="{{ asset('storage/submits/'.$sub->files) }}" download="{{ $sub->files }}">Files</a>
-                            @endif
+                        <a target="_blank" href="{{ $sub->files }}">Files</a>
 
-                            <a href="{{ route('detail-submit',$sub->id) }}">Details</a>
+                        <a href="{{ route('detail-submit',$sub->id) }}">Details</a>
+
                         </div>
                     </div>
                 @endforeach

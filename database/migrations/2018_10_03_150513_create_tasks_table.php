@@ -19,6 +19,7 @@ class CreateSubmissionsTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('due_to');
+            $table->string('img')->default("http://pluspng.com/img-png/task-png-image-puffle-tasks-icon-png-club-penguin-wiki-fandom-powered-by-wikia-1400.png");
             $table->timestamps();
         });
     }
