@@ -19,15 +19,14 @@ class SubmissionsController extends Controller
 //        $request->validate([
 //            'files' => array('string', 'required'),
 //        ]);
-
-        $user = auth()->user();
-
-
-        \App\Submission::create([
-            'user_id' => auth()->user()->id,
-            'task_id' => $task->id,
-            'files' => $request->input('files')
-        ]);
+//
+//        $user = auth()->user();
+//
+//        \App\Submission::create([
+//            'user_id' => auth()->user()->id,
+//            'task_id' => $task->id,
+//            'files' => $request->input('files')
+//        ]);
 
         return view('tasks.task',$task->id);
     }
