@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Submission;
 use App\Task;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Http\File;
 
 class SubmissionsController extends Controller
 {
@@ -20,9 +18,7 @@ class SubmissionsController extends Controller
             'files' => array('string', 'required'),
         ]);
 
-        $user = auth()->user();
-
-        \App\Submission::create([
+        Submission::create([
             'user_id' => auth()->user()->id,
             'task_id' => $task->id,
             'files' => $request->input('files')
@@ -32,10 +28,8 @@ class SubmissionsController extends Controller
     }
 
     public function details(Request $request, Submission $submission){
-        if($submission->user->id === auth()->user()->id) {
-
+        if($submission->user->id === auth()->user()->id)
             return view('submissions.details')->with('sub',$submission);
-        }
         else
             return redirect()->back();
     }

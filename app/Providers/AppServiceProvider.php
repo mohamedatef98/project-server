@@ -18,13 +18,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         \App\Meeting::created(function ($meeting){
-            foreach (\App\User::where('email', '!=', env('MAIL_USERNAME'))->get() as $user){
+            foreach (\App\User::get() as $user){
                 Mail::to($user->email)->send(new MeetingsMail($meeting));
             }
         });
 
         \App\Task::created(function ($task){
-            foreach (\App\User::where('email', '!=', env('MAIL_USERNAME'))->get() as $user){
+            foreach (\App\User::get() as $user){
                 Mail::to($user->email)->send(new TasksMail($task));
             }
         });

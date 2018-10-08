@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => env('MAIL_DRIVER', 'mailgun'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', env('MAIL_USERNAME')),
+        'address' => env('MAIL_FROM_ADDRESS', "eng.mohamedatef@gmail.com"),
         'name' => env('MAIL_FROM_NAME', 'CSE SW Engineering Project'),
     ],
 
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    'username' => "postmaster@sandbox8c31d422974e485e87196935897b63c1.mailgun.org",
 
-    'password' => env('MAIL_PASSWORD'),
+    'password' => "28059177f247e1fc31617dc63af1c204-bd350f28-550b356d",
 
     /*
     |--------------------------------------------------------------------------

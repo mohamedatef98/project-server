@@ -17,8 +17,6 @@ class MeetingsController extends Controller
 
         $confirmed = $meeting->hasConfirmed($request->user());
 
-        //return $confirmed? 't': 'f';
-
         return view('meetings.meeting')->with('meeting',$meeting)->with('confirmed',$confirmed);
     }
 
