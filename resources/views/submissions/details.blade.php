@@ -37,7 +37,7 @@
                     <div class="d-flex w-100 justify-content-between">
 
 
-                        <a target="_blank" href="http://{{ $sub->files }}">Files</a>
+                        <a target="_blank" href="{{ $sub->files }}">Files</a>
 
 
 
