@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        \App\Meeting::created(function ($meeting){
+        /*\App\Meeting::created(function ($meeting){
             foreach (\App\User::get() as $user){
                 Mail::to($user->email)->send(new MeetingsMail($meeting));
             }
@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
             foreach (\App\User::get() as $user){
                 Mail::to($user->email)->send(new TasksMail($task));
             }
-        });
+        });*/
     }
 
     /**
