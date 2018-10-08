@@ -15,6 +15,7 @@ class SubmissionsController extends Controller
     }
 
     public function store(Request $request, Task $task){
+        return $request;
         $request->validate([
             'files' => array('string', 'required' ),
         ]);
