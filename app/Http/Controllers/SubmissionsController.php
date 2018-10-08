@@ -27,9 +27,7 @@ class SubmissionsController extends Controller
             'files' => $request->input('files')
         ]);
 
-        return redirect()->back();
-
-        return redirect()->route('view-task',$task->id);
+        return view('tasks.task',$task->id);
     }
 
     public function details(Request $request, Submission $submission){
