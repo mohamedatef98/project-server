@@ -16,13 +16,13 @@ class SubmissionsController extends Controller
 
     public function store(Request $request, Task $task){
 
-        $request->validate([
-            'files' => array('string', 'required' ),
-        ]);
+//        $request->validate([
+//            'files' => array('string', 'required'),
+//        ]);
 
         $user = auth()->user();
 
-        return auth()->user();
+
         \App\Submission::create([
             'user_id' => auth()->user()->id,
             'task_id' => $task->id,
