@@ -39,9 +39,6 @@
 
                         <a target="_blank" href="{{ $sub->files }}">Files</a>
 
-
-
-                        <a href="{{ route('detail-submit',$sub->id) }}">Details</a>
                     </div>
                 </div>
         </div>

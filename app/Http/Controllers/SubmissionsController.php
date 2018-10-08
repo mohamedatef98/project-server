@@ -21,6 +21,8 @@ class SubmissionsController extends Controller
         ]);
 
         $user = auth()->user();
+
+        return auth()->user();
         \App\Submission::create([
             'user_id' => auth()->user()->id,
             'task_id' => $task->id,
