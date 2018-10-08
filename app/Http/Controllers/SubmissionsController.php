@@ -16,17 +16,17 @@ class SubmissionsController extends Controller
 
     public function store(Request $request, Task $task){
 
-//        $request->validate([
-//            'files' => array('string', 'required'),
-//        ]);
-//
-//        $user = auth()->user();
-//
-//        \App\Submission::create([
-//            'user_id' => auth()->user()->id,
-//            'task_id' => $task->id,
-//            'files' => $request->input('files')
-//        ]);
+        $request->validate([
+            'files' => array('string', 'required'),
+        ]);
+
+        $user = auth()->user();
+
+        \App\Submission::create([
+            'user_id' => auth()->user()->id,
+            'task_id' => $task->id,
+            'files' => $request->input('files')
+        ]);
 
         return redirect()->route('view-task',$task->id);
     }
