@@ -14,5 +14,5 @@ use Illuminate\Foundation\Inspiring;
 */
 
 Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
+    \App\Meeting::create(['info'=>'test Info', 'time'=>'Time test', 'location'=>'Very Cool test location']);
 })->describe('Display an inspiring quote');
