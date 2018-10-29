@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','phone','github', 'skills'
+        'name', 'email', 'password',
     ];
 
     /**
@@ -27,8 +27,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    public function submissions(){
-        return $this->hasMany('\App\Submission');
-    }
 }

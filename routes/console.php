@@ -13,6 +13,6 @@ use Illuminate\Foundation\Inspiring;
 |
 */
 
-Artisan::command('test', function () {
-    \App\Meeting::create(['info'=>'test Info', 'time'=>'Time test', 'location'=>'Very Cool test location']);
+Artisan::command('inspire', function () {
+    $this->comment(Inspiring::quote());
 })->describe('Display an inspiring quote');

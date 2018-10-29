@@ -15,46 +15,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::group(['prefix'=>'api'], function (){
 
+   Route::group(['prefix'=>'students'], function (){
 
-Route::group(['prefix' => '/', 'middleware' => 'auth'],function(){
-    Route::get('/home', 'HomeController@index')->name('home');
+       Route::get('/','StudentController@index');
 
-    Route::get('/tasks','TasksController@index')->name('view-tasks');
+       Route::get('/{student}','StudentController@show');
 
-    Route::get('/meetings','MeetingsController@index')->name('view-meetings');
+       Route::delete('/{student}','StudentController@destroy');
 
-    Route::get('/meetings/{meeting}', 'MeetingsController@view')->name('view-meeting');
+       Route::post('/','StudentController@create');
 
-    Route::get('/meetings/{meeting}/confirm', 'MeetingsController@confirm')->name('confirm-meeting');
+   });
 
-    Route::get('/tasks','TasksController@index')->name('view-tasks');
+    Route::group(['prefix'=>'courses'], function (){
 
-    Route::get('/tasks/{task}', 'TasksController@view')->name('view-task');
+        Route::get('/','CourseController@index');
 
-    Route::get('/tasks/{task}/submit','SubmissionsController@index')->name('view-submit');
+        Route::get('/{course}','CourseController@show');
 
-    Route::post('/tasks/{task}','SubmissionsController@store')->name('post-submit');
+        Route::delete('/{course}','CourseController@destroy');
 
-    Route::get('/tasks/submissions/{submission}','SubmissionsController@details')->name('detail-submit');
+        Route::post('/','CourseController@create');
 
-});
-
-Route::group(['prefix' => '/admin', 'middleware'=>'admin'],function (){
-    Route::get('/',function (\Illuminate\Support\Facades\Request $request){
-        return "Hello";
-        //return view('admin-panel');
-    })->name('admin-panel');
-
-    Route::get('/meeting','MeetingsController@create')->name('form-meeting');
-    Route::post('/meeting','MeetingsController@store')->name('post-meeting');
-    Route::get('/meeting/{meeting}','MeetingsController@list')->name('list-meeting');
-
-    Route::get('/task','TasksController@create')->name('form-task');
-    Route::get('/task','TasksController@store')->name('post-task');
-    Route::get('/task/{task}','TasksController@list')->name('list-task');
-
-
+    });
 
 });
